@@ -1,4 +1,5 @@
 ﻿using System;
+using CommandLine;
 
 namespace PickleTestCounter
 {
@@ -6,31 +7,24 @@ namespace PickleTestCounter
     {
         static void Main(string[] args)
         {
-            if (args.Length > 0)
-            {
-                var directoryPath = args[0];
-
-                if (args.Length > 1)
+            Parser.Default.ParseArguments<CommandLineOptions>(args)
+                .WithParsed(options =>
                 {
-                    var branchName = args[1];
+                    var inputPath = options.InputPath;
+                    var branchName = options.BranchName;
+                    var outputPath = options.OutputPath;
 
-                    var testCounter = new TestCounter(directoryPath);
+                    var testCounter = new TestCounter(inputPath);
                     testCounter.DiscoverFeatureFiles();
                     testCounter.DiscoverTests();
 
                     var json = testCounter.ConvertToJson();
-                    Logger.LogJson(branchName, json);
-                }
-                else
-                {
-                    Console.WriteLine("No branch name given");
-                }
-            }
-            else
-            {
-                Console.WriteLine("There is no path directory given. Exiting now.");
-            }
-           
+                    Console.WriteLine(json);
+                    Logger.LogJson(branchName, json, outputPath);
+
+                    var testJson = @"{ ""appointmentQPos"": 954 }";
+                    Logger.UpdateMasterJson(testJson, outputPath);
+                });
         }
     }
 }

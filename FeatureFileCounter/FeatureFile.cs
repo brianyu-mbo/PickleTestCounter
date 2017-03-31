@@ -7,6 +7,7 @@ namespace PickleTestCounter
     {
         private readonly string _filePath;
         private string[] _lines;
+
         /// <summary>
         /// Name of the widget
         /// </summary>

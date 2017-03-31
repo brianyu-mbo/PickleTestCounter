@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using PickleTestCounter;
 
 namespace PickleTestCounter
 {
@@ -27,6 +26,9 @@ namespace PickleTestCounter
             }
         }
         
+        /// <summary>
+        /// Find all feature files and adds them to the list of FeatureFiles
+        /// </summary>
         public void DiscoverFeatureFiles()
         {
             var myFiles =
@@ -46,6 +48,9 @@ namespace PickleTestCounter
             }
         }
 
+        /// <summary>
+        /// Goes through all feature files and grabs the keys and count and puts them in the dictionary
+        /// </summary>
         public void DiscoverTests()
         {
             foreach (var featureFile in _featureFiles)
@@ -66,15 +71,7 @@ namespace PickleTestCounter
                 }
             }
         }
-
-        public void PrintDictionary()
-        {
-            foreach (var key in CategoryTestCountDictionary.Keys)
-            {
-                Console.WriteLine($"Key: {key}  Value: {CategoryTestCountDictionary[key]}");
-            }
-        }
-
+        
         public string ConvertToJson()
         {
             return JsonConvert.SerializeObject(CategoryTestCountDictionary, Formatting.Indented);
