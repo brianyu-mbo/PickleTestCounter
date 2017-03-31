@@ -6,3 +6,5 @@ C:\Users\brian.yu\Documents\Visual Studio 2015\Projects\FeatureFileCounter\Featu
 C:\Users\brian.yu\Documents\Visual Studio 2015\Projects\FeatureFileCounter\FeatureFileCounter\bin\Debug\PickleTestCounter.pdb
 C:\Users\brian.yu\Documents\Visual Studio 2015\Projects\FeatureFileCounter\FeatureFileCounter\obj\Debug\PickleTestCounter.exe
 C:\Users\brian.yu\Documents\Visual Studio 2015\Projects\FeatureFileCounter\FeatureFileCounter\obj\Debug\PickleTestCounter.pdb
+C:\Users\brian.yu\Documents\Visual Studio 2015\Projects\FeatureFileCounter\FeatureFileCounter\bin\Debug\CommandLine.dll
+C:\Users\brian.yu\Documents\Visual Studio 2015\Projects\FeatureFileCounter\FeatureFileCounter\bin\Debug\CommandLine.xml
