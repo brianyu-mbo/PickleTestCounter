@@ -1,0 +1,42 @@
+######################
+#                    #
+#    .gitignore      #
+#                    #
+######################
+
+# Note: If a file is included in the project adding it to the gitignore will not cause it to be ignored.
+# To help keep this file concise please use simple glob patterns whenever possible.
+# https://en.wikipedia.org/wiki/Glob_(programming)#Syntax
+# https://git-scm.com/docs/gitignore
+
+
+###################
+#                 #
+# Generated Files #
+#                 #
+###################
+
+*.map
+_[Cc]hutzpah.*
+
+
+################
+#              #
+# Dependencies #
+#              #
+################
+
+packages/
+node_modules/
+
+
+#################
+#               #
+# Project Files #
+#               #
+#################
+
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
